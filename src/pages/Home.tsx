@@ -96,10 +96,10 @@ export default function Home() {
             y: [0, -5, 5, 0],
           }}
           transition={{ 
-            scale: { duration: 0.5, ease: "easeOut" },
-            opacity: { duration: 0.3 },
-            x: { duration: 20, repeat: Infinity, ease: "linear" },
-            y: { duration: 15, repeat: Infinity, ease: "linear" }
+            scale: { duration: 0.3, ease: "easeOut" },
+            opacity: { duration: 0.2 },
+            x: { duration: 15, repeat: Infinity, ease: "linear" },
+            y: { duration: 10, repeat: Infinity, ease: "linear" }
           }}
           className="absolute inset-0 z-0"
         >
