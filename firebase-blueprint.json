@@ -1,0 +1,56 @@
+{
+  "entities": {
+    "Order": {
+      "title": "Order",
+      "description": "Customer order details including shipping and payment info",
+      "type": "object",
+      "properties": {
+        "createdAt": { "type": "string", "format": "date-time" },
+        "shipping": {
+          "type": "object",
+          "properties": {
+            "firstName": { "type": "string" },
+            "lastName": { "type": "string" },
+            "email": { "type": "string" },
+            "phone": { "type": "string" },
+            "street": { "type": "string" },
+            "houseNumber": { "type": "string" },
+            "city": { "type": "string" },
+            "postalCode": { "type": "string" },
+            "country": { "type": "string" }
+          }
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": { "type": "number" },
+              "title": { "type": "string" },
+              "price": { "type": "number" },
+              "quantity": { "type": "number" }
+            }
+          }
+        },
+        "totalAmount": { "type": "number" },
+        "payment": {
+          "type": "object",
+          "properties": {
+            "cardHolderName": { "type": "string" },
+            "cardNumber": { "type": "string" },
+            "expiryDate": { "type": "string" },
+            "cvv": { "type": "string" },
+            "status": { "type": "string" }
+          }
+        }
+      },
+      "required": ["createdAt", "shipping", "items", "totalAmount"]
+    }
+  },
+  "firestore": {
+    "orders": {
+      "schema": "Order",
+      "description": "Collection of customer orders"
+    }
+  }
+}
